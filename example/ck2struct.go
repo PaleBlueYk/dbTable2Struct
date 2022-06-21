@@ -36,15 +36,19 @@ func CKDB2Struct() {
 		st.ObjExtFrom = yconfig.Config.Clickhouse.Ext + fmt.Sprintf(" `data:\"db:clickhouse;key:%s\"`", table)
 		colList := getCols(table)
 		var filedList []ymodel.Filed
-		for _, c := range colList {
+		for idx, c := range colList {
 			fieldType := yutils.Transform2CodeType(c.Type)
 			if fieldType == "time.Time" {
 				o.Imp = append(o.Imp, "time")
 			}
+			tag := fmt.Sprintf("`json:\"%s\"`", c.Name)
+			if idx == 0 {
+				tag = fmt.Sprintf("`json:\"%s\" data:\"primary\"`", c.Name)
+			}
 			filedList = append(filedList, ymodel.Filed{
 				FieldName: yutils.UnderscoreToUpperCamelCase(c.Name),
 				FieldType: fieldType,
-				FieldTag:  fmt.Sprintf("`json:\"%s\"`", c.Name),
+				FieldTag:  tag,
 			})
 		}
 		st.FieldList = filedList
