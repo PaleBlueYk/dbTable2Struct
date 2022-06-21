@@ -2,7 +2,7 @@
 
 ## 简介
 将数据库中表转换成Golang结构体(目前仅支持Clickhouse,Mysql版本应该能找到其他现成的)    
-背景: 开发中用到Clickhouse数据库,已知数据库中有相关表，但没有现成的结构体，一共39张表，字段繁多，此项目应运而生
+背景: 开发中用到Clickhouse数据库,已知数据库中有相关表，但没有现成的结构体，一共39张表，字段繁多(通过本项目生成的结果有1200行左右，谁手写谁**)
 
 ## 使用方法
 
@@ -11,12 +11,12 @@
 1. 拉取项目
 
 ```shell
-git clone 
+git clone https://github.com/PaleBlueYk/dbTable2Struct.git
 ```
 
 2. 修改配置文件 配置文件位于项目目录下 conf.toml
 
-3.
+3. 运行程序
 
 ```shell
 go run main.go

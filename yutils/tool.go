@@ -12,17 +12,11 @@ func UnderscoreToUpperCamelCase(s string) string {
 func Transform2CodeType(s string) string {
 	s = strings.ToLower(s)
 
-	if strings.Contains(s, "datetime64") {
+	if strings.Contains(s, "datetime64") || strings.Contains(s, "datetime") || strings.Contains(s, "date") {
 		s = "time.Time"
 	}
-	if strings.Contains(s, "fixedstring") {
+	if strings.Contains(s, "fixedstring") || strings.Contains(s, "object") {
 		s = "string"
-	}
-	if strings.Contains(s, "datetime") {
-		s = "time.Time"
-	}
-	if strings.Contains(s, "date") {
-		s = "time.Time"
 	}
 	return s
 }
