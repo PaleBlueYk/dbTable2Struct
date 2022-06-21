@@ -1,6 +1,9 @@
 package yutils
 
-import "strings"
+import (
+	"strconv"
+	"strings"
+)
 
 func UnderscoreToUpperCamelCase(s string) string {
 	s = strings.Replace(s, "_", " ", -1)
@@ -56,4 +59,9 @@ func SnakeString(s string) string {
 	}
 	//ToLower把大写字母统一转小写
 	return strings.ToLower(string(data[:]))
+}
+
+func IsNum(s string) bool {
+	_, err := strconv.ParseInt(s, 10, 64)
+	return err == nil
 }

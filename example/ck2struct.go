@@ -10,6 +10,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 	"text/template"
 )
 
@@ -45,8 +46,37 @@ func CKDB2Struct() {
 			if idx == 0 {
 				tag = fmt.Sprintf("`json:\"%s\" data:\"primary\"`", c.Name)
 			}
+			name := yutils.UnderscoreToUpperCamelCase(c.Name)
+			var newName string
+			if yutils.IsNum(strings.Split(name, "")[0]) {
+				for i, s := range strings.Split(name, "") {
+					if i == 0 {
+						switch s {
+						case "0":
+							s = "zero"
+						case "1":
+							s = "one"
+						case "2":
+							s = "two"
+						case "3":
+							s = "three"
+						case "4":
+							s = "four"
+						case "5":
+							s = "five"
+						case "6":
+							s = "six"
+						case "7":
+							s = "seven"
+						}
+					}
+					newName += s
+				}
+			} else {
+				newName = name
+			}
 			filedList = append(filedList, ymodel.Filed{
-				FieldName: yutils.UnderscoreToUpperCamelCase(c.Name),
+				FieldName: yutils.UnderscoreToUpperCamelCase(newName),
 				FieldType: fieldType,
 				FieldTag:  tag,
 			})
