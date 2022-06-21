@@ -1,0 +1,11 @@
+CodeOutFile = 'obj.go' # 输出文件名
+Package = 'model' # 包名, 最终输出位置为: <ProjectPath>/<Package>/<CodeOutFile>
+# 数据库
+[Clickhouse]
+Host = ''
+DB = 'dbname'
+User = 'root'
+Pwd = ''
+Port = 9000
+Imp = ["github.com/drharryhe/has/services/hdatasvs"]
+Ext = "hdatasvs.DataObject"
