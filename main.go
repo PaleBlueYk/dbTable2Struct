@@ -17,5 +17,6 @@ func main() {
 		return
 	}
 	example.CKDB2Struct()
+	logger.Info("all-down!")
 }
 

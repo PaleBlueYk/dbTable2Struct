@@ -13,6 +13,7 @@ type Conf struct {
 		Port uint
 		Imp []string
 		Ext string
+		ObjPre string
 	}
 }
 
