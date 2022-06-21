@@ -33,7 +33,7 @@ func CKDB2Struct() {
 		var st ymodel.St
 		st.ObjName = yconfig.Config.Clickhouse.ObjPre+yutils.UnderscoreToUpperCamelCase(table)
 		// TODO 结构体集成类,项目需要data的tag
-		st.ObjExtFrom = yconfig.Config.Clickhouse.Ext + fmt.Sprintf(" `data:\"db:clickhouse;key:%s\"`", yutils.SnakeString(table))
+		st.ObjExtFrom = yconfig.Config.Clickhouse.Ext + fmt.Sprintf(" `data:\"db:clickhouse;key:%s\"`", table)
 		colList := getCols(table)
 		var filedList []ymodel.Filed
 		for _, c := range colList {
