@@ -18,6 +18,12 @@ func Transform2CodeType(s string) string {
 	if strings.Contains(s, "fixedstring") {
 		s = "string"
 	}
+	if strings.Contains(s, "datetime") {
+		s = "time.Time"
+	}
+	if strings.Contains(s, "date") {
+		s = "time.Time"
+	}
 	return s
 }
 
