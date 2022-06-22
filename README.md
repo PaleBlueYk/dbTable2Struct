@@ -1,5 +1,5 @@
 # dbTable2Struct
-
+[![OSCS Status](https://www.oscs1024.com/platform/badge/PaleBlueYk/dbTable2Struct.svg?size=small)](https://www.oscs1024.com/project/PaleBlueYk/dbTable2Struct?ref=badge_small)
 ## 简介
 将数据库中表转换成Golang结构体(目前仅支持Clickhouse,Mysql版本应该能找到其他现成的)    
 背景: 开发中用到Clickhouse数据库,已知数据库中有相关表，但没有现成的结构体，一共39张表，字段繁多(通过本项目生成的结果有1200行左右，谁手写谁**)
