@@ -42,9 +42,9 @@ func CKDB2Struct() {
 			if fieldType == "time.Time" {
 				o.Imp = append(o.Imp, "time")
 			}
-			tag := fmt.Sprintf("`json:\"%s\"`", c.Name)
+			tag := fmt.Sprintf("`json:\"%s\" data:\"key:%s\"`", c.Name, c.Name)
 			if idx == 0 {
-				tag = fmt.Sprintf("`json:\"%s\" data:\"primary\"`", c.Name)
+				tag = fmt.Sprintf("`json:\"%s\" data:\"primary;key:%s\"`", c.Name, c.Name)
 			}
 			name := yutils.UnderscoreToUpperCamelCase(c.Name)
 			var newName string
