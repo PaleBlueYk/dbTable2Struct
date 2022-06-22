@@ -1,9 +1,10 @@
 package ymodel
 
 type Objs struct {
-	PkgName string   // 包名
-	Imp     []string // 导入包
-	Objs    []St     // 结构体
+	PkgName    string   // 包名
+	Imp        []string // 导入包
+	Objs       []St     // 结构体
+	TableNames []TBName
 }
 
 type St struct {
@@ -13,7 +14,12 @@ type St struct {
 }
 
 type Filed struct {
-	FieldName string	// 字段名
-	FieldType string	// 字段类型
-	FieldTag  string	// 字段tag
+	FieldName string // 字段名
+	FieldType string // 字段类型
+	FieldTag  string // 字段tag
+}
+
+type TBName struct {
+	ObjName   string
+	TableName string
 }

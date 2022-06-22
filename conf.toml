@@ -9,4 +9,4 @@ Pwd = ''
 Port = 9000
 Imp = ["github.com/drharryhe/has/services/hdatasvs"] # 导入包
 Ext = "hdatasvs.DataObject" # 结构体继承
-ObjPre = "Ck" # 结构体名前缀
+ObjPre = "" # 结构体名前缀

@@ -19,3 +19,13 @@ type {{.ObjName}} struct {
 	{{- end }}
 }
 {{- end }}
+
+type Tabler interface {
+	TableName() string
+}
+
+{{range .TableNames}}
+func ({{.ObjName}}) TableName() string {
+	return "{{.TableName}}"
+}
+{{- end}}
